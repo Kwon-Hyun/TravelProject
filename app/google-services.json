@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "191931580377",
+    "project_id": "travely-2022",
+    "storage_bucket": "travely-2022.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:191931580377:android:ce06c742ba54760a6463c8",
+        "android_client_info": {
+          "package_name": "com.example.travelproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "191931580377-qcdecrunf18rich5c08kqfektvck1ndn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQRxhEsttD4aPNavJ9FM2zulZ69RoT1Bg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "191931580377-qcdecrunf18rich5c08kqfektvck1ndn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
