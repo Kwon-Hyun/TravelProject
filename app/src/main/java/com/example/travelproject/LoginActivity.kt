@@ -13,12 +13,13 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.travelproject.databinding.ActivityLoginBinding
 import com.example.travelproject.databinding.FragmentSettingBinding
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
 private lateinit var auth : FirebaseAuth
 private var firebaseAuth: FirebaseAuth? = null
 
-private val RC_SIGN_IN = 9001
+private const val RC_SIGN_IN = 9001
 
 class LoginActivity : AppCompatActivity() {
     lateinit var binding: ActivityLoginBinding
@@ -30,9 +31,9 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        firebaseAuth = FirebaseAuth.getInstance();
+        mAuth = Firebase.auth;
 
-        // 로그인
+        // 로그인 버튼
         binding.btnLogin.setOnClickListener {
             val email = binding.txtEmail.text.toString()
             val password = binding.txtPassword.text.toString()
@@ -40,7 +41,7 @@ class LoginActivity : AppCompatActivity() {
             login(email, password)  // 로그인 함수
         }
 
-        // 회원가입
+        // 회원가입 버튼
         binding.btnSignup.setOnClickListener {
             // 회원가입 activity 이동 객체 생성
             val intent: Intent = Intent(this@LoginActivity, SignUpActivity::class.java)
@@ -53,7 +54,7 @@ class LoginActivity : AppCompatActivity() {
         mAuth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    val intent: Intent = Intent(this@LoginActivity, MainActivity::class.java)
+                    val intent: Intent = Intent(this@LoginActivity, NavigateActivity::class.java)
                     startActivity(intent)
                     Toast.makeText(this, "로그인 성공!", Toast.LENGTH_SHORT).show()
                     finish()

@@ -20,8 +20,8 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".MainActivity"
-            android:exported="true" />
+            android:name=".NavigateActivity"
+            android:exported="false" />
         <activity
             android:name=".LoginActivity"
             android:exported="true">
